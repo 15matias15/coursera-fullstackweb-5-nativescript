@@ -15,6 +15,7 @@ import { DishService } from './services/dish.service';
 import { baseURL } from './shared/baseurl';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -25,7 +26,12 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     HttpClientModule,
     NativeScriptUISideDrawerModule
   ],
-  declarations: [AppComponent, MenuComponent, DishdetailComponent],
+  declarations: [
+    AppComponent,
+    MenuComponent,
+    DishdetailComponent,
+    HomeComponent
+  ],
   providers: [
     { provide: 'baseURL', useValue: baseURL },
     DishService,
