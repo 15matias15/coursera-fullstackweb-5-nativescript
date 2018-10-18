@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptFormsModule } from 'nativescript-angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
@@ -18,6 +19,11 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
+import { FavoriteService } from './services/favorite.service';
+import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -26,7 +32,13 @@ import { AboutComponent } from './about/about.component';
     AppRoutingModule,
     NativeScriptHttpClientModule,
     HttpClientModule,
-    NativeScriptUISideDrawerModule
+    NativeScriptUISideDrawerModule,
+    TNSFontIconModule.forRoot({
+      fa: './fonts/font-awesome.min.css'
+    }),
+    NativeScriptUIListViewModule,
+    NativeScriptFormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
@@ -34,12 +46,15 @@ import { AboutComponent } from './about/about.component';
     DishdetailComponent,
     HomeComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    FavoritesComponent,
+    ReservationComponent
   ],
   providers: [
     { provide: 'baseURL', useValue: baseURL },
     DishService,
-    ProcessHTTPMsgService
+    ProcessHTTPMsgService,
+    FavoriteService
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })
