@@ -25,6 +25,7 @@ import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ReservationModalComponent } from './reservationmodal/reservationmodal.component';
+import { CommentComponent } from './Comment/Comment.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -50,7 +51,8 @@ import { ReservationModalComponent } from './reservationmodal/reservationmodal.c
     AboutComponent,
     FavoritesComponent,
     ReservationComponent,
-    ReservationModalComponent
+    ReservationModalComponent,
+    CommentComponent
   ],
   providers: [
     { provide: 'baseURL', useValue: baseURL },
@@ -58,7 +60,7 @@ import { ReservationModalComponent } from './reservationmodal/reservationmodal.c
     ProcessHTTPMsgService,
     FavoriteService
   ],
-  entryComponents: [ReservationModalComponent],
+  entryComponents: [ReservationModalComponent, CommentComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
 /*
