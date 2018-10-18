@@ -24,6 +24,7 @@ import { FavoriteService } from './services/favorite.service';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationModalComponent } from './reservationmodal/reservationmodal.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -48,7 +49,8 @@ import { ReservationComponent } from './reservation/reservation.component';
     ContactComponent,
     AboutComponent,
     FavoritesComponent,
-    ReservationComponent
+    ReservationComponent,
+    ReservationModalComponent
   ],
   providers: [
     { provide: 'baseURL', useValue: baseURL },
@@ -56,6 +58,7 @@ import { ReservationComponent } from './reservation/reservation.component';
     ProcessHTTPMsgService,
     FavoriteService
   ],
+  entryComponents: [ReservationModalComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
 /*
