@@ -26,6 +26,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ReservationModalComponent } from './reservationmodal/reservationmodal.component';
 import { CommentComponent } from './Comment/Comment.component';
+import { CouchbaseService } from './services/couchbase.service';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -58,7 +59,8 @@ import { CommentComponent } from './Comment/Comment.component';
     { provide: 'baseURL', useValue: baseURL },
     DishService,
     ProcessHTTPMsgService,
-    FavoriteService
+    FavoriteService,
+    CouchbaseService
   ],
   entryComponents: [ReservationModalComponent, CommentComponent],
   schemas: [NO_ERRORS_SCHEMA]
