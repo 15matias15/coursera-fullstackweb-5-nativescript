@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 import * as Email from 'nativescript-email';
+import * as TNSPhone from 'nativescript-phone';
 
 @Component({
   selector: 'app-contact',
@@ -23,5 +24,11 @@ export class ContactComponent implements OnInit {
         });
       } else console.log('No Email Configured');
     });
+  }
+
+  callRestaurant() {
+    TNSPhone.requestCallPermission()
+      .then(() => TNSPhone.dial('+56985964901', false))
+      .catch(() => TNSPhone.dial('+56985964901', true));
   }
 }
